@@ -1,13 +1,12 @@
-class RemoveDuplicatesStortedArray {
+class RemoveDuplicatesSortedArray {
     public int removeDuplicates(int[] nums) {
         
         int i = 0; // 1st pointer
-        int k = 1; // 2nd pointer
-        int val = nums[i]; // valor de referencia.
+        int k = 0; // 2nd pointer
+        // int val = nums[i]; // valor de referencia.
         while (i < nums.length) {
-            if (nums[i] > val) {
-                val = nums[i++];
-                nums[k++] = val; 
+            if (nums[i] > nums[k]) {
+                nums[++k] = nums[i++];
             } 
             else {
                 i++;
@@ -18,7 +17,7 @@ class RemoveDuplicatesStortedArray {
             System.out.println(t);
         }
         */
-        return k;
+        return k + 1;
     }
 
 }
