@@ -1,0 +1,24 @@
+class RemoveDuplicatesStortedArray {
+    public int removeDuplicates(int[] nums) {
+        
+        int i = 0; // 1st pointer
+        int k = 1; // 2nd pointer
+        int val = nums[i]; // valor de referencia.
+        while (i < nums.length) {
+            if (nums[i] > val) {
+                val = nums[i++];
+                nums[k++] = val; 
+            } 
+            else {
+                i++;
+            }
+        }
+        /*
+        for (int t : nums){
+            System.out.println(t);
+        }
+        */
+        return k;
+    }
+
+}
